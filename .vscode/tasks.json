@@ -22,6 +22,15 @@
             "options": {
                 "cwd": "${fileDirname}"
             }
+        },
+        {
+            "label": "Launch R",
+            "group": "none",
+            "type": "process",
+            "command": "${config:r.rterm.windows}",
+            "options": {
+                "cwd": "${fileDirname}"
+            }
         }
     ]
 }
