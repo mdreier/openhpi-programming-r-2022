@@ -11,7 +11,7 @@
                 "codeoceanR::rt_score()"
             ],
             "type": "process",
-            "command": "C:\\usr\\R-4.1.3\\bin\\Rscript.exe",
+            "command": "Rscript",
             "options": {
                 "cwd": "${fileDirname}"
             }
@@ -24,7 +24,7 @@
                 "codeoceanR::rt_submit()"
             ],
             "type": "process",
-            "command": "C:\\usr\\R-4.1.3\\bin\\Rscript.exe",
+            "command": "Rscript",
             "options": {
                 "cwd": "${fileDirname}"
             }
