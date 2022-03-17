@@ -6,7 +6,7 @@ codeoceanR::rt_score() # Anleitung in Lektion 0.4 Übungsaufgaben
 # 2. ?Funktionsname eingeben
 # 3. Die Funktionstaste F1 drücken, während der Cursor (Mauszeiger) auf dem Befehl ist
 # 4. online Suchmaschine mit dem Begriff "R Funktion" verwenden
-dokuAufrufen <- 0 # ersetze die 0 mit der Nummer der richtigen Antwort
+dokuAufrufen <- 3 # ersetze die 0 mit der Nummer der richtigen Antwort
 
 
 # Erinnerung: oft bewerten lassen, z.B. nach jeder Aufgabe.
@@ -23,14 +23,14 @@ dokuAufrufen <- 0 # ersetze die 0 mit der Nummer der richtigen Antwort
 # A2 ----
 # Rufe die Hilfe zu pi auf. Dort sind weitere eingebaute Objekte dokumentiert.
 # Welches enthält die Großbuchstaben des englischen Alphabets?
-eingebautesAlphabet <- "NameDesObjekts"
+eingebautesAlphabet <- "LETTERS"
 # Pro Tipp: Doppelklick auf 'NameDesObjekts' markiert ganzes Wort, dann ändern :)
 
 
 # A3 ----
 # Manche Funktionen haben zwei verschiedene Namen, die beide dasselbe tun.
 # Was ist die Alternative zu 'rm'? (Steht in der Dokumentation)
-alternativer_name_fuer_rm <- "NameDerFunktion"
+alternativer_name_fuer_rm <- "remove"
 
 
 # A4 ----
@@ -38,7 +38,7 @@ alternativer_name_fuer_rm <- "NameDerFunktion"
 # Pro Tipp: für viele Funktionen sind die Beispiele sehr hilfreich!
 # Hinweis: Auf CodeOcean wird die Hilfe nicht vollständig angezeigt:
 # ->    https://www.rdocumentation.org/packages/base/topics/ls
-beispielObjektName <- "NameDesObjekts"
+beispielObjektName <- ".Ob"
 
 
 # A5 ----
@@ -46,7 +46,7 @@ beispielObjektName <- "NameDesObjekts"
 # auch wenn die Kurzform (zB ?append) verwendet wird, zB für 'function':
 ?"function"
 # Was ist der erste Querverweis (See Also) in der Doku zu arithmetischen Operatoren wie +?
-ersterQuerverweis <- "NameDerFunktion"
+ersterQuerverweis <- "sqrt"
 
 
 # Mache weiter in "R12_Hilfe_2.R"

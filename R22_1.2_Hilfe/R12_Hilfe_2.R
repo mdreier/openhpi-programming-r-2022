@@ -2,13 +2,13 @@ codeoceanR::rt_score()
 
 # A6 ----
 # Wieviele Seiten hat das RefCard von Tom Short?
-refCardAnzahlSeiten <- 0
+refCardAnzahlSeiten <- 4
 
 
 # A7 ----
 # Im Rstudio base R cheat sheet steht die Syntax, um die Doku von Funktionen aufzurufen.
 # Welche Funktion wird dort als erstes Beispiel verwendet?
-cheatSheetFunktion <- "Funktionsname"
+cheatSheetFunktion <- "mean"
 
 
 # Pro Tipp: drucke eine RefCard deiner Wahl aus und markiere 
@@ -17,12 +17,12 @@ cheatSheetFunktion <- "Funktionsname"
 
 # A8 ----
 # Was ist der Link zu aktuellen R Fragen auf Stackoverflow? (der https Teil ist optional)
-soLinkR <- "URL_hier"
+soLinkR <- "https://stackoverflow.com/questions/tagged/r"
 
 
 # A9 ----
 # Welchen Beitrag im Kursforum findest du bisher am hilfreichsten?
-forumLink <- "URL_hier"
+forumLink <- "open.hpi.de/courses/programmieren-r2022/question"
 
 
 # Wenn du fertig bist, übermittle bitte deinen Punktestand an openHPI mit:
