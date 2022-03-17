@@ -6,7 +6,10 @@
         {
             "label": "Score",
             "group": "test",
-            "args": ["-e", "codeoceanR::rt_score()"],
+            "args": [
+                "-e",
+                "codeoceanR::rt_score()"
+            ],
             "type": "process",
             "command": "C:\\usr\\R-4.1.3\\bin\\Rscript.exe",
             "options": {
@@ -16,7 +19,10 @@
         {
             "label": "Submit",
             "group": "none",
-            "args": ["-e", "codeoceanR::rt_submit()"],
+            "args": [
+                "-e",
+                "codeoceanR::rt_submit()"
+            ],
             "type": "process",
             "command": "C:\\usr\\R-4.1.3\\bin\\Rscript.exe",
             "options": {
@@ -30,7 +36,8 @@
             "command": "${config:r.rterm.windows}",
             "options": {
                 "cwd": "${fileDirname}"
-            }
+            },
+            "problemMatcher": []
         }
     ]
 }
