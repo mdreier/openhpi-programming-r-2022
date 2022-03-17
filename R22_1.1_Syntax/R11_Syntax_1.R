@@ -1,10 +1,11 @@
-codeoceanR::rt_score() # Anleitung in Lektion 0.4 Übungsaufgaben
+# codeoceanR::rt_score() # Anleitung in Lektion 0.4 Übungsaufgaben
 
 # A1 ----
 # Erstelle ein Objekt mit dem Namen 'ergebnisBruch'.
 # Es soll das Ergebnis folgender Berechnung enthalten:
 # 0.3 durch 4  
 
+ergebnisBruch <- 0.3 / 4
 
 # Lasse deinen Code nach jeder Aufgabe bewerten.
 # Score auch wenn du nicht weiterkommst:
@@ -17,7 +18,7 @@ codeoceanR::rt_score() # Anleitung in Lektion 0.4 Übungsaufgaben
 # 'ergebnisWurzel' soll enthalten:  0.3 durch 4    mal     Wurzel aus 313600
 # Pro Tipp: Zuweisungspfeil inkl. Leerzeichen mit Tasten 'ALT'/'OPTION' und '-'
 
-
+ergebnisWurzel <- ( 0.3 / 4 ) * sqrt(313600)
 
 # Um deine Lösungen zu testen, werden oft Objekte verlangt.
 # Das gibt dir die Freiheit, die Lösung zu gestalten.
