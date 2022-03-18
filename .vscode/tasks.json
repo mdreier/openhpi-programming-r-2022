@@ -14,20 +14,18 @@
             "command": "Rscript",
             "options": {
                 "cwd": "${fileDirname}"
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "Submit",
             "group": "none",
-            "args": [
-                "-e",
-                "codeoceanR::rt_submit()"
-            ],
-            "type": "process",
-            "command": "Rscript",
+            "type": "shell",
+            "command": "Rscript -e \\\"if (${input:finalSubmission}) codeoceanR::rt_submit(confirm = FALSE)\\\"",
             "options": {
                 "cwd": "${fileDirname}"
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "Launch R",
@@ -38,6 +36,24 @@
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "finalSubmission",
+            "type": "pickString",
+            "description": "Is this your final submission?",
+            "default": "FALSE",
+            "options": [
+                {
+                    "label": "Yes",
+                    "value": "TRUE"
+                },
+                {
+                    "label": "No",
+                    "value": "FALSE"
+                }
+            ]
         }
     ]
 }
