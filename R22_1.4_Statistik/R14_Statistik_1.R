@@ -1,4 +1,4 @@
-codeoceanR::rt_score()
+# codeoceanR::rt_score()
 
 werte <- c(82, 146, 202, 258, 206, 335, 137, 169, 99, 190,
            67, 96, 196, 141, 104, 345, 125, 35, 159, 85,
@@ -9,19 +9,19 @@ werte <- c(82, 146, 202, 258, 206, 335, 137, 169, 99, 190,
 # arithmetischer Mittelwert, Standardabweichung, Median, Minimum, 70-Perzentil*
 # *: 30% von 'werte' sind größer als dieser Wert
 # t1_start # hier drunter schreiben
-stats <- 0
+stats <- c( mean(werte), sd(werte), median(werte), min(werte), quantile(werte, probs=0.7) )
 # t1_ende
 
 
 # A2 ----
 # Sortiere 'werte' absteigend.
-werte_sortiert <- 0
+werte_sortiert <- sort(werte, decreasing = TRUE)
 
 
 # A3 ----
 # Was ist der Mittelwert und der Median, wenn der vierte Wert 658 statt 258 wäre?
 # Pro Tipp: Die Funktion replace() kann hier Code sparen
-w_anders_mittel <- 0
-w_anders_median <- 0
+w_anders_mittel <- mean(replace(werte, 4, 658))
+w_anders_median <- median(replace(werte, 4, 658))
 
 # Mache weiter in "R14_Statistik_2.R"

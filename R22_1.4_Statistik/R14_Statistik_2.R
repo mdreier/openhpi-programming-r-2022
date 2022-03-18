@@ -1,4 +1,4 @@
-codeoceanR::rt_score()
+# codeoceanR::rt_score()
 
 # Zwei Vektoren mit einer Auswahl aus dem eingebauten Datensatz 'trees':
 # ?trees # für die Doku (alle eingebauten Datensätze haben Metadaten.)
@@ -8,8 +8,8 @@ dicke <- c(8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11, 11, 11.1, 11.2, 11.3, 11.4, 11.4
 # A4 ----
 # Sortiere beide Vektoren in aufsteigender Reihenfolge des ersten ('hoehe').
 # 'hoehe' und 'dicke' selbst sollen nicht verändert werden.
-hoeheSortiert <- 0
-dickeSortiert <- 0
+hoeheSortiert <- hoehe[order(hoehe)]
+dickeSortiert <- dicke[order(hoehe)]
 
 
 # Mache weiter in "R14_Statistik_3.R"
