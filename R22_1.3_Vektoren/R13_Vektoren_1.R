@@ -1,8 +1,8 @@
-codeoceanR::rt_score()
+# codeoceanR::rt_score()
 
 # A1 ----
 # Füge folgende Zahlen zu einem Vektor zusammen: 8, -5.5, 27, 110
-vektorZahlen <- 0
+vektorZahlen <- c(8, -5.5, 27, 110)
 
 
 # Letzte Erinnerung: Löse sehr oft eine Bewertung aus (STRG + SHIFT + S).
@@ -10,27 +10,27 @@ vektorZahlen <- 0
 
 # A2 ----
 # Wiederhole die Zahl 5 77 mal.
-wiederholteZahl <- 0
+wiederholteZahl <- rep(5, times = 77)
 
 
 # A3 ----
 # Erstelle eine Sequenz von 500 bis 1 in Einserschritten.
 # CodeGolf Pro Tipp: Diese Aufgabe ist mit 5 Symbolen lösbar.
-zahlenSequenz1 <- 0
+zahlenSequenz1 <- 500:1
 
 
 # A4 ----
 # Erstelle eine Sequenz von 500 bis 0 in Abständen von 25.
-zahlenSequenz25 <- 0
+zahlenSequenz25 <- seq(500, 0, by = -25)
 
 
 # A5 ----
 # Erstelle eine Sequenz von 500 bis 0 mit 30 Zahlen (in je gleichem Abstand).
-zahlenSequenz30 <- 0
+zahlenSequenz30 <- seq(500, 0, len = 30)
 
 
 # A6 ----
-zahlenSequenz31 <- zahlenSequenz30
+zahlenSequenz31 <- c(zahlenSequenz30, -5)
 # Füge der 'zahlenSequenz31' die Zahl -5 am Ende hinzu.
 
 
