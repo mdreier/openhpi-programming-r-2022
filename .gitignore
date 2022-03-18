@@ -1,2 +1,4 @@
 *.zip
 *.co
+**/.scripts/
+**/.Rproj.user/
