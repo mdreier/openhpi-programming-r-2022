@@ -6,13 +6,13 @@ codeoceanR::rt_score()
 # Standardmäßig (by default) wählt R einen Ordner dafür aus.
 # Lese in der Dokumentation (Hilfe) der Installierfunktion die Erklärung zu lib.
 # Wie heißt die Funktion, deren erster Ausgabewert den Pfad setzt?
-funktionsName <- "nameDerFunktion"
-
+funktionsName <- ".libPaths"
 
 # A2 ----
 # Prüfe, ob das Paket 'parallel' verfügbar und verwendbar ist.
 # t2_start
-
+requireNamespace("parallel")
+isNamespaceLoaded("parallel")
 # t2_ende
 
 
@@ -29,20 +29,21 @@ funktionsName <- "nameDerFunktion"
 # 4. Im Skript werden viele Funktionen aus vielen Paketen verwendet.
 # 5. Der Paketname ist sehr lang und soll nicht mehrfach im Code ausgeschrieben werden.
 # 6. Die library Aufrufe am Skriptanfang machen klar, welche Pakete benötigt werden.
-paketSyntax <- 0
+paketSyntax <- c(3, 5)
 
 
 # A4 ----
 # Schau dir den Quellcode von 'sample' an.
 # Welche Funktion ruft diese für die eigentliche Ausführung auf?
-sampleFunktion <- "NameDerFunktion"
+sampleFunktion <- "sample.int"
+
 
 
 # A5 ----
 # Schau dir den Quellcode von 'library' auf github an.
 # Ab welcher Zeile wird die Funktion selbst definiert?
 # Generiere den Direktlink, indem du auf die Zeilennummer klickst und die Adresse kopierst.
-libraryURL <- "LinkZurZeile"
+libraryURL <- "https://github.com/wch/r-source/blob/8e1cb67de52f1ea1c1b2fa9f100850f7da3f0e47/src/library/base/R/library.R#L54"
 
 
 # Wenn du fertig bist, übermittle bitte deinen Punktestand an openHPI mit:
