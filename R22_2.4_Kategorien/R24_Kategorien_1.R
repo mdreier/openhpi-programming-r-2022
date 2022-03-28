@@ -9,20 +9,20 @@ einkommen <-  c(  2300,   500,  1500,    700,   900,  2000,  3400,  1500,  600)
 # Hinweis: das objekt selbst muss verändert werden, also das Ergebnis der
 # Konvertierungsfunktion soll zugewiesen werden. 
 # Objekte können dafür einfach überschrieben werden, siehe Lektion 1.1 Folie Zuweisung (assignment)
-
+augenfarbe <- factor(augenfarbe)
 
 # A2 ----
 # Welche Augenfarben kommen wie oft vor?
-tabelleAugen <- 0
+tabelleAugen <- table(augenfarbe)
 
 
 # A3 ----
 # Was ist das mittlere Einkommen (mean) pro Augenfarbe?
-farbeEinkommen <- 0
+farbeEinkommen <- tapply(einkommen, augenfarbe, mean)
 
 
 # A4 ----
-mehraugen <- augenfarbe
+mehraugen <- c(augenfarbe, factor("nussbraun"))
 # Füge dem Vektor 'mehraugen' einen Eintrag "nussbraun" an.
 # Hinweis: Falls du vektor_mit_factors[42] <- "neue Kategorie" verwenden möchtest,
 # füge zuerst dem Faktor das neue Level hinzu.
@@ -41,14 +41,18 @@ mehraugen <- augenfarbe
 # Welche Personen haben die häufigste Augenfarbe?
 # Hint: eine Häufigkeitstabelle hat Namen, die mit `names()` erhalten werden können.
 # Diese bleiben erhalten, wenn der Index des Maximums ermittelt wird.
-personenMitFarbe <- function(namen, farben) 0
+personenMitFarbe <- function(namen, farben) {
+    haeufigsteFarbe <- names(which.max(table(farben)))
+    namen[farben == haeufigsteFarbe]
+}
 personenMitFarbe(person, augenfarbe) # Alex, Emil, Gabi, Ines
 
 
 # A6 -----
 # Erhalte 'min', 'median', 'mean' sowie 'max' Einkommen pro Farbe.
 # Die Ausgabe soll aussehen wie bei 'nchar' in den Folien.
-mmmmEinkommen <- 0
+statistik <- function(x) c(min(x), median(x), mean(x), max(x))
+mmmmEinkommen <- tapply(X = einkommen, INDEX = augenfarbe, FUN=statistik)
 mmmmEinkommen
 # $blau
 #   1500   1750   1750   2000 
@@ -66,7 +70,8 @@ mmmmEinkommen
 # Unbewerteter Codegolf Bonus: Was ist die kürzeste Lösung für Aufgabe 6? 
 # Leerzeichen werden nicht gezählt.
 # tb_start
-mmmmEinkommenKurz <- 0
+s <- function(x) c(min(x), median(x), mean(x), max(x))
+mmmmEinkommenKurz <- tapply(einkommen, augenfarbe, s)
 # tb_ende
 
 
