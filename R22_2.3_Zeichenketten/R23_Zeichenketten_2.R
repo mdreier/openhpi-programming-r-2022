@@ -13,27 +13,27 @@ codeoceanR::rt_score()
 
 # A5 ----
 # Schreibe eine Funktion, die überprüft, ob 'wort' in 'liste' vorkommt.
-wort_existiert <- function(wort, liste) 0
+wort_existiert <- function(wort, liste) !is.na(match(wort, liste))
 wort_existiert("rockt", c("R", "rockt", "als", "Programmiersprache") ) # soll TRUE sein
 wort_existiert("rockt", c("Andere", "Worte", "ohne", "Felsen") ) # FALSE
 
 
 # A6 ----
 # Welche der 'eingaben' enthalten ein bestimmtes 'muster'? Es sind die Stellen gesucht (Index).
-welche_enthalten <- function(muster, eingaben) 0
+welche_enthalten <- function(muster, eingaben) grep(muster, eingaben)
 schoko <- c("Milka", "Lindor", "Ritter Sport", "Merci", "Frigor", "Feodora", "Alpia")
 welche_enthalten("or", schoko) # 2,3,5,6
 
 
 # A7 ----
 # Gib für jedes Element in 'eingaben' an, ob es 'muster' beinhaltet.
-jeweils_enthalten <- function(muster, eingaben) 0
+jeweils_enthalten <- function(muster, eingaben) grepl(muster, eingaben)
 jeweils_enthalten("or", schoko) # FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE
 
 
 # A8 ----
 # Überprüfe, ob 'wort' unabhängig von Groß/Kleinbuchstaben in 'liste' vorkommt.
-wort_existiert_case <- function(wort, liste) 0
+wort_existiert_case <- function(wort, liste) any(grepl(paste0("^", wort, "$"), liste, ignore.case = TRUE)) # toupper(wort) %in% toupper(liste)
 wort_existiert_case("rockt", c("R", "Rockt", "als", "Programmiersprache") ) # TRUE
 
 

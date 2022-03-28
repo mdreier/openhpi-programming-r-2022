@@ -7,7 +7,13 @@ codeoceanR::rt_score()
 # Hinweis: Diese Aufgabe ist schwieriger als die anderen Aufgaben. 
 # Mit deinem derzeitigen Wissen erfordert die Lösung mehr als 1 Zeile Code.
 # Es gibt sehr viele Wege, diese Aufgabe zu lösen. -> Forum 
-datum_mit_minus <- function(...) 0
+datum_mit_minus <- function(eingabe) {
+    vereinheitlicht <- gsub(pattern = "-", replacement = "", x = eingabe)
+    years <- substr(vereinheitlicht, start = 0, stop = 4)
+    months <- substr(vereinheitlicht, start = 5, stop = 6)
+    days <- substr(vereinheitlicht, start = 7, stop = 8)
+    paste(years, months, days, sep = "-")
+}
 datum <- c("2022-03-21", "20220322", "20220323", "2022-03-24")
 datum_mit_minus(datum) # soll sein: 2022-03-21, 2022-03-22, 2022-03-23, 2022-03-24
 
@@ -22,7 +28,7 @@ under R. R provides a wide variety of statistical (linear and nonlinear modellin
 classical statistical tests, time-series analysis, classification, clustering) 
 and graphical techniques, and is highly extensible."
 # Wie viele Worte (leerzeichengetrennt) enthält Rtext?
-anzahlWorte <- 0
+anzahlWorte <- length(strsplit(Rtext, " ")[[1]])
 
 
 

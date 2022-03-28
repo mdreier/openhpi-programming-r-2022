@@ -20,12 +20,12 @@ heinz <- c("Getränk","gefällig","?",
            "Glas","Grog","?", 
            "Gern",".", "Gieß","!","Gieß","!")
 # Finde alle Worte aus dem Dialog, die mit 'Ge' oder 'ge' anfangen.
-Gworte <- 0
+Gworte <- grep("^ge", heinz, ignore.case = TRUE, value="TRUE")
 
 
 # A10 ----
 # Finde alle Worte, die mit g enden.
-worteG <- 0
+worteG <- grep("g$", heinz, ignore.case = TRUE, value="TRUE")
 
 
 # A11 ----
@@ -33,13 +33,15 @@ worteG <- 0
 # Die 'anfang' Werte enthalten nicht die benötigte Regex-anweisung.
 # Pro-Tipp: Wenn dies (oder irgendetwas anderes) schwierig erscheint, 
 # zeigt eine Online-Suche oft, dass die Lösung kurz sein kann...
-anfangende_eingaben <- function(anfang, eingaben) 0
+anfangende_eingaben <- function(anfang, eingaben) grep(paste0("^", anfang), eingaben, value = TRUE)
 anfangende_eingaben("ab", c("außer", "abc", "nichts", "mit abkürzungen")) # nur 'abc', nicht das letzte
 
 
 # A12 -----
 # Ersetze alle Eingaben zwischen 'viel' und 'Gerede' (inklusive) mit '[...]'
-abkuerzen <- function(eingabe) 0
+abkuerzen <- function(eingabe) {
+    sub(pattern = "viel.*Gerede", replacement = "[...]", x = eingabe)
+}
 abkuerzen("Lange Zitate mit viel mehr als nötigem Gerede bitte kürzen.")
 # soll werden: 'Lange Zitate mit [...] bitte kürzen.'
 
