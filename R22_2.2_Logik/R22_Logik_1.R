@@ -5,12 +5,12 @@ zahlen <- c(  5, 14, 13,  9,  3,  2, 10, 12, 11,  6,  7,  8,  1,  4, 15)
 gruppe <- c("b","c","d","c","a","d","b","d","b","b","d","c","a","b","a")
 # Wähle alle Zahlen aus, die kleiner gleich 9 sind.
 # Die Auftretensreihenfolge ist beizubehalten.
-kleineZahlen <- 0
+kleineZahlen <- zahlen[which(zahlen <= 9)]
 
 
 # A2 ----
 # Wähle alle Zahlen aus, die zur Gruppe "b" gehören.
-zahlen_b <- 0
+zahlen_b <- zahlen[which(gruppe == "b")]
 
 
 # A3 ----
@@ -22,12 +22,12 @@ zahlen_b <- 0
 # Pro Tipp: ALT Taste gedrückt halten + Pfeil hoch/runter verschiebt Zeile
 
 # t3_start # Lösung unter dieser Zeile behalten
-3
-"b"
-"2"
-"a"
-"B"
 1
+"2"
+3
+"a"
+"b"
+"B"
 # t3_ende
 
 

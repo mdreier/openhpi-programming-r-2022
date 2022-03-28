@@ -7,7 +7,7 @@ codeoceanR::rt_score()
 # Der eigentliche 'Fehler' liegt also im Testscript, aber der
 # nachfolgende Code soll sicherer gestaltet werden.
 werte <- c(5,9,1,4,3,8)
-sortiert <- sort(werte, decreasing=T) ; sortiert
+sortiert <- sort(werte, decreasing=TRUE) ; sortiert
 
 # Wenn du fertig bist, übermittle bitte deinen Punktestand an openHPI mit:
 # codeoceanR::rt_submit()
