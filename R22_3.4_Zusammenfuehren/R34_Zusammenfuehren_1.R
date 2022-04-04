@@ -2,21 +2,21 @@ codeoceanR::rt_score()
 
 # A1 ----
 # Lese beide Birnen Dateien ein und füge sie untereinander zusammen.
-birnen <- 0
+birnen <- rbind(read.table("R34d_Birnen1.txt", header = TRUE), read.table("R34d_Birnen2.txt", header = TRUE))
 
 
 # A2 ----
 # Lies die Alter Datei ein und verknüpfe beide Datensäze. 
 # Nur vollständige Einträge (complete records) werden benötigt.
 # Setze die Argumente für die DataFrames so, dass die Reihenfolge Alter, birnen ist (nicht umgekehrt).
-birnenAlter <- 0
+birnenAlter <- merge(read.table("R34d_Alter.txt", header = TRUE), birnen, by.x = "Name", by.y = "Person")
 
 
 # A3 ----
 # Verknüpfe erneut die Altersdaten mit den Birnendaten.
 # Behalte diesmal alle Einträge aus Alter.
 # Birnenbesitzer mit unbekanntem Alter werden nicht benötigt.
-birnenAlterKomplett <- 0
+birnenAlterKomplett <- merge(read.table("R34d_Alter.txt", header = TRUE), birnen, by.x = "Name", by.y = "Person", all.x = TRUE)
 
 
 # A4 ----
@@ -28,7 +28,7 @@ browseURL("https://www.datasciencemadesimple.com/join-in-r-merge-in-r/")
 # 2. inner join
 # 3. outer join
 # 4. cross join
-join <- 0
+join <- 3
 
 
 
