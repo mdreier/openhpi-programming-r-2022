@@ -8,14 +8,14 @@ codeoceanR::rt_score()
 # 4. Nach etwaigem Verschieben von Ordnern habe ich selbst den Pfad nicht mehr.
 # 5. Auf einem zweiten (synchronisierten) Rechner habe ich den Pfad ggf. nicht.
 # 6. Dateinamen sollten immer mit komplettem (absolutem) Pfad angegeben werden.
-WD_auswahl <- c(0,0,0)
+WD_auswahl <- c(2,4,5)
 # -> Diskussion zur akzeptierten Lösung gerne im Forum!
 
 
 # A6 ----
 # Die R33d6 Datei ist mit read.csv einzulesen.
 # Beachte die Kennzeichnung für Fehldaten.
-insurances <- 0
+insurances <- read.csv("R33d6_insurances.csv", header = TRUE, na.strings=c("unknown"))
 
 
 # A7 ----
@@ -25,7 +25,7 @@ insurances <- 0
 #       Beispiele am Ende der Doku der Funktion.
 # Falls du das nicht machst und die Spaltentrenner als eigene Spalten einliest, 
 #       lösche diese Spalten dann heraus.
-tage <- 0
+tage <- read.fwf("R33d7_tage.txt", widths = c(4,-1,2,-1,2))
 
 
 # A8 ----
@@ -36,7 +36,7 @@ data(iris)  ;  head(iris)
 # Unterdrücke die Anführungszeichen in (Spalten-)Namen
 # Unterdrücke die Einbindung von rownames.
 # Verwende Kommas als Dezimaltrennzeichen.
-
+write.table(iris, "iris.txt", sep="\t", quote = FALSE, row.names = FALSE, dec = ",")
 
 # In "R33_Einlesen_3.R" sind noch weiterführende Bonus Aufgaben.
 # Diese sind nicht bepunktet und optional. Löse sie nur, wenn du die Zeit dafür hast.

@@ -25,7 +25,7 @@ codeoceanR::rt_score()
 
 # A1 ----
 # Lese die zu dieser Aufgabe gehörigen R33d1_mortalities Datei in R ein.
-mortalities <- 0
+mortalities <- read.table("R33d1_mortalities.txt", header = TRUE)
 str(mortalities) # Optional: mit rskey auf F3 legen. https://github.com/brry/rskey#rskey
 
 
@@ -36,7 +36,7 @@ str(mortalities) # Optional: mit rskey auf F3 legen. https://github.com/brry/rsk
 if(FALSE) # Nächste Zeile nicht ausführen, wenn die Datei in Tests aufgerufen wird
 file.show("R33d2_diseases.txt") # siehe auch berryFunctions::openFile()
 # Nun lese die Datei in R ein.
-diseases <- 0
+diseases <- read.table("R33d2_diseases.txt", header = TRUE, sep = "\t")
 
 
 # A3 ----
@@ -45,10 +45,10 @@ diseases <- 0
 # Hinweis: dafür muss der Mauszeiger (Cursor) innerhalb der Anführungsstriche sein.
 # Tipp: Beim Dateiinhalt anzeigen auch mal runterscrollen und auf Dezimalzeichen achten.
 # Tipp: manche Daten haben Metadaten, aber keine Spaltennamen.
-expenditure <- 0
+expenditure <- read.table("R33d3_expenditure.txt", skip = 8, dec = ",")
 
 # A4 ----
-mortality <- 0
+mortality <- read.table("R33d4_mortality.txt", skip = 5, header = TRUE, sep = ";")
 
 
 # Mache weiter in "R33_Einlesen_2.R"
