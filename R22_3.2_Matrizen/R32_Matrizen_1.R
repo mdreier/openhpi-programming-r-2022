@@ -2,7 +2,7 @@ codeoceanR::rt_score()
 
 # A1 ----
 # Erstelle eine Matrix mit 3 Spalten mit den Zahlen von 1:12, zeilenweise gefüllt.
-zahlenMatrix <- 0
+zahlenMatrix <- matrix(1:12, ncol = 3, byrow = TRUE)
 
 
 # A2 -----
@@ -11,7 +11,10 @@ zahlenMatrix <- 0
 # eine 0 reingeschrieben werden.
 # Tipp: Ohne return Statement gibt eine Funktion das Ergebnis der letzten Anweisung aus.
 # Eine Zuweisung erstellt nicht nur ein Objekt, sondern gibt es auch unsichtbar aus.
-summe0 <- function(mat) 0
+summe0 <- function(mat) {
+    mat["zwischensumme",][1:2] = 0;
+    mat;
+}
 
 load("R32d_beispielMatrix.Rdata") # lade ein R-Objekt ins Workspace
 beispielMatrix
@@ -49,12 +52,12 @@ data("volcano") # im Environment Panel daraufklicken, um es aufzurufen
 
 
 # Erhalte einen Vektor mit allen volcano Werten kleiner als 100.
-tieflandWerte <- 0
+tieflandWerte <- volcano[volcano < 100]
 
 
 # A4 ----
 # Multipliziere jeden Wert in der eingebauten Matrix "WorldPhones" mit 2.
-doppelTelefone <- 0
+doppelTelefone <- WorldPhones * 2
 
 
 # Mache weiter in "R32_Matrizen_2.R"

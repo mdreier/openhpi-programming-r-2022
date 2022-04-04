@@ -3,13 +3,13 @@ codeoceanR::rt_score()
 # B1 ----
 # Weiterführende Aufgabe aus dem Zusatzmaterial:
 # Transponiere 'WorldPhones', d.h. spiegele über die Diagonale (tausche Zeilen und Spalten).
-telefone_nach_jahr <- 0
+telefone_nach_jahr <- t(WorldPhones)
 
 
 # B2 ----
 # Berechne den Wertebereich (range) in jeder Zeile von 'VADeaths'.
 # Transponiere die Ausgabe, sodass die Zeilen als solche erhalten bleiben und nicht zu Spalten werden..
-VArange <- 0
+VArange <- t(apply(VADeaths, 1, range))
 
 
 # B3 ----
@@ -17,13 +17,16 @@ VArange <- 0
 matrix_1 <- matrix(1:15, nrow=5, ncol=3, byrow=FALSE); matrix_1
 matrix_2 <- matrix(1:12, nrow=3, ncol=4, byrow=TRUE) ; matrix_2
 # Berechne die Matrixmultiplikation mit diesen beiden Matrizen.
-matrixprodukt <- 0
+matrixprodukt <- matrix_1 %*% matrix_2
 
 
 # B4 -----
 # Kopiere die Funktionsdefinition aus A2. 
 # Nun soll auch die letzte Spalte entfernt werden. Pro Tipp: negatives Indexing
-summe0bonus <- function(mat) 0
+summe0bonus <- function(mat) {
+    mat["zwischensumme",][1:2] = 0;
+    mat[, -ncol(mat)];
+}
 summe0bonus(beispielMatrix) # soll sein:
 #               [,1] [,2] [,3]
 # 1               17   12   95
