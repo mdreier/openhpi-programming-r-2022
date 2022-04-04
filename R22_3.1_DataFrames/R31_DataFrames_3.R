@@ -4,7 +4,7 @@ codeoceanR::rt_score()
 # Schreibe eine Funktion, die die Vorletzte Zeile des Inputs ausgibt, 
 # egal wie viele Zeilen das data.frame hat.
 # Tipp: Verwende den Befehl, der die Anzahl Zeilen ermittelt.
-vorletzteZeile <- function(...) 0
+vorletzteZeile <- function(df) df[nrow(df) - 1,]
 vorletzteZeile(BOD) # Erwartete Ausgabe: Time 5, demand 15.6
 vorletzteZeile(beaver1) # sollte sein:
 #     day time  temp activ
@@ -34,7 +34,7 @@ class(result1) # "try-error"
 
 sauerstoffFehler <- try( # behalte diese Zeile
 # tb2_start
-0
+BOD[, "Demand"]
 # tb2_ende
 , silent=TRUE) # behalte auch diese Zeile
 sauerstoffFehler
