@@ -14,7 +14,12 @@ codeoceanR::rt_plot1()
 # Optionaler pro Tipp aus 4.3 Barplots B5: nutze eine formula.
 puroCol <- c("orange", "mediumpurple2")
 # t1_start
-
+plot(Puromycin$conc, Puromycin$rate,
+    cex = 2,
+    pch = 16,
+    las = 1,
+    col = puroCol[Puromycin$state]
+)
 # t1_ende
 
 
@@ -26,7 +31,11 @@ puroCol <- c("orange", "mediumpurple2")
 # Für das Testskript muss leider das Argument 'legend' explizit benannt angegeben werden.
 # Siehe Beschreibung unter dem Video: https://open.hpi.de/courses/programmieren-r2022/items/54zjgumn5zJdk8Vr2M5LIl
 # t2_start
-
+legend("bottomright",
+    legend = levels(Puromycin$state),
+    pt.cex = 2,
+    pch = 16,
+    col = puroCol)
 # t2_ende
 
 

@@ -18,7 +18,11 @@ head(randomWalk1)
 # Aus der plot-Doku zu 'y': optional if x is an appropriate structure.
 
 # t3_start
-
+plot(randomWalk1, 
+    col="purple", 
+    lwd = 2, 
+    type = "l",
+    ylim = range(randomWalk1, randomWalk2))
 # t3_ende
 
 
@@ -27,14 +31,20 @@ head(randomWalk1)
 # Dreiecke halber Normalgröße an den Koordinaten der Punkte zeigt.
 # Nutze auch hier nur den Vektor für x, keine Koordinatenpaare.
 # t4_start
-
+lines(
+    randomWalk2,
+    type = "o",
+    lty = "dashed",
+    pch = 2,
+    cex = 0.5
+)
 # t4_ende
 
 
 # A5 ----
 # Füge eine vertikale Linie bei x=100 ein.
 # t5_start
-
+abline(v = 100)
 # t5_ende
 
 
@@ -42,7 +52,7 @@ head(randomWalk1)
 # Füge am oberen Rand des Diagramms eine Zahlen-Achse hinzu.
 # Tipp: Lasse das 'at' Argument weg, um schöne Zahlen berechnen zu lassen.
 # t6_start
-
+axis(side = 3)
 # t6_ende
 
 
@@ -62,14 +72,14 @@ head(randomWalk1)
 # Verwende geeignete Funktionen, um die Endkoordinaten
 # (d.h. die Zielkoordinaten der Pfeilspitze) zu ermitteln.
 # tb1_start
-
+arrows(75, 4000, which(randomWalk1 == max(randomWalk1)), max(randomWalk1), col="red")
 # tb1_ende
 
 
 # B2 ----
 # Umgebe den Plotbereich mit einer 5 Einheiten dicken darkorange Linie.
 # tb2_start
-
+box(col="darkorange", lwd = 5)
 # tb2_ende
 
 
@@ -77,7 +87,7 @@ head(randomWalk1)
 # Füge eine große (2x), grüne, kursive und fette Überschrift "Zufallsbewegung" hinzu.
 # Sie sollte bei 10% der Plot-Region linksbündig stehen.
 # tb3_start
-
+title(main = "Zufallsbewegung", cex.main = 2, col.main = "green", font.main = 4, adj = 0.1)
 # tb3_ende
 # Vom Test nicht akzeptiere aber sehr elegante Lösung: Gemäß ?title Beispiele 
 # kann main eine Liste sein, sodass nicht an jedes Argument .main angehängt werden muss.
@@ -87,7 +97,7 @@ head(randomWalk1)
 # Füge am rechten Rand den Text "Nun ist dieser Platz auch gefüllt" ein.
 # Siehe weiterführende Folie "Text im Rand".
 # tb4_start
-
+mtext (side = 4, "Nun ist dieser Platz auch gefüllt")
 # tb4_ende
 
 
