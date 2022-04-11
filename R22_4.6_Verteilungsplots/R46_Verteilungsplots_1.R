@@ -16,8 +16,8 @@ codeoceanR::rt_full_file("R46d_Gesundheit.csv") # gerne nach dem ersten Lauf aus
 # A1 ----
 # Lese beide CHSI-Dateien ein (R46d_Meta und _Gesundheit.csv), die in dieser Aufgabe abgelegt sind.
 # Fehlende Daten sind mit c(-1111.1, -2222, -2222.2) markiert.
-meta <- 0
-gesundheit <- 0
+meta <- read.csv("R46d_Meta.csv", header = TRUE)
+gesundheit <- read.csv("R46d_Gesundheit.csv", header = TRUE, na.strings = c(-1111.1, -2222, -2222.2))
 
 
 # A2 ----
@@ -33,7 +33,7 @@ gesundheit <- 0
 # Hinweis: boxplot wertet zunächst xlim/ylim aus, bevor es die Daten tatsächlich umdreht.
 # https://github.com/wch/r-source/blob/trunk/src/library/graphics/R/boxplot.R#L256-L259 # Shift + Klick in Rstudio
 # t2_start
-
+boxplot(gesundheit$Smoker, range = 0, ylim = c(0, 70), horizontal = TRUE)
 # t2_ende
 
 
@@ -42,7 +42,7 @@ gesundheit <- 0
 # Verwende diesen Vektor um die einzelnen Kästen einzufärben:
 farben <- c("#84D5A4", "#C059CB", "#D0533D", "#415354", "#CEA953", "#91D44B")
 # t3_start
-
+boxplot(gesundheit[, 1:6], col = farben)
 # t3_ende
 
 
@@ -51,7 +51,7 @@ farben <- c("#84D5A4", "#C059CB", "#D0533D", "#415354", "#CEA953", "#91D44B")
 # Anzahl der Ärzte pro 100k Einwohner (Prim_Care_Phys_Rate) 
 # abhängig davon, ob es sich um ein Gebiet mit Ärztemangel handelt (HPSA_Ind).
 # t4_start
-
+boxplot(Prim_Care_Phys_Rate~HPSA_Ind, data = gesundheit)
 # t4_ende
 
 
@@ -63,7 +63,13 @@ farben <- c("#84D5A4", "#C059CB", "#D0533D", "#415354", "#CEA953", "#91D44B")
 # Verwende die Überschrift "CHSI Fettleibigkeit".
 # Unterdrücke die Beschriftung der x-Achse (verwende einen leeren String).
 # t5_start
-
+hist(gesundheit$Obesity, 
+    col = "plum", 
+    main = "CHSI Fettleibigkeit", 
+    las = 1, 
+    xlab = "", 
+    breaks = 30
+)
 # t5_ende
 # Diskutiere gerne im Forum: Warum sieht das wie eine Normalverteilung aus?
 # (Ich habe ja gesagt, dass die im wirklichen Leben selten vorkommt.)
