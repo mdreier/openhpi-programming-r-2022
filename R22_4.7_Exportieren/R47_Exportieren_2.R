@@ -4,13 +4,13 @@ codeoceanR::rt_score()
 # Plotte in eine png-Datei namens iris_boxplot mit DIN-A4-Größe (21 x 29,7 cm) 
 # im Hochformat bei 150 dpi Auflösung (resolution).
 # t6_start
-
+png("iris_boxplot.png", width = 21, height = 29.7, units = "cm", res = 150)
 # t6_ende
 boxplot(iris, col="gold")
 # Vergiss nicht, das device anschließend zu schließen.
 # Nutze dafür die richtige Stelle im Skript, und zwar NICHT in Abschnitt 6.
 # Dort ist nur der eine Befehl verlangt und erlaubt, der das Device öffnet.
-
+dev.off()
 
 
 # Unten sind noch weiterführende Bonus Aufgaben.
@@ -26,15 +26,15 @@ boxplot(iris, col="gold")
 # iris-01.png, iris-02.png usw.
 # Verwende nur einen einzigen Aufruf zum Öffnen des Geräts. Nutze dev.off am Ende.
 # tb1_start
-
+png("iris-%2d.png")
 # Kommentiere diese Grafiken wieder ein, wenn du soweit bist.
 # Ansonsten öffnen sie ein neues plot device und A6 kriegt die Meldung:
 #           T6: Device geöffnet aber nicht geschlossen. dev.cur(): pdf, Nr: 2
-# plot(iris$Sepal.Length)
-# plot(iris$Sepal.Width)
-# plot(iris$Petal.Length)
-# plot(iris$Petal.Width)
-
+plot(iris$Sepal.Length)
+plot(iris$Sepal.Width)
+plot(iris$Petal.Length)
+plot(iris$Petal.Width)
+dev.off()
 # tb1_ende
 
 
