@@ -8,7 +8,11 @@ codeoceanR::rt_plot1()
 # Zeichne die 'rate' über 'conc' aus dem eingebauten 'Puromycin'-Datensatz.
 # Färbe die Punkte nach dem Wert in der Spalte 'state'.
 # tb5_start
-
+plot(
+    rate~conc,
+    data = Puromycin,
+    col = Puromycin$state
+)
 # tb5_ende
 
 
@@ -21,7 +25,13 @@ plot(1:11, col=1:11, pch=16, cex=3) # Farben werden recycelt
 # Verwende nun die 3. und 4. Farbe der Standardpalette.
 # Tipp: Konvertiere 'state' in ein integer und füge dann den benötigten Wert hinzu.
 # tb6_start
-
+plot(
+    rate~conc,
+    data = Puromycin,
+    col = as.numeric(factor(Puromycin$state)) + 2,
+    pch = 16,
+    cex = 3
+)
 # tb6_ende
 
 codeoceanR::rt_plot2() 

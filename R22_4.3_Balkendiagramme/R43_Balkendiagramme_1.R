@@ -14,11 +14,11 @@ codeoceanR::rt_plot1()
 # Siehe die beiden Folien "Funktion anwenden auf Zeilen / Spalten einer Matrix".
 # Siehe auch 3.2 Matrizen Programmieraufgabe A6
 # Achtung, erwünscht ist der Median (zB 5.800), nicht der Mittelwert (5.843).
-iris_med <- 0
+iris_med <- apply(iris[1:4], 2, median)
 
 # Zeichne ein Balkendiagramm von iris_med mit steelblue Balken und aufrechten Achsennummern.
 # t1_start
-
+barplot(iris_med, las = 1, col = "steelblue")
 # t1_ende
 
 
@@ -26,7 +26,7 @@ iris_med <- 0
 # Erstelle ein Balkendiagramm mit der Anzahl der Staaten innerhalb jeder 
 # 'state.region' (eingebaut). Häufigkeit zählen steht in Lektion 2.4 (Kategorien).
 # t2_start
-
+barplot(table(state.region))
 # t2_ende
 
 

@@ -20,7 +20,14 @@ survival
 # von 'Class' und 'Survived' im Überlebensdatensatz `survival`.
 # Füge eine Legende hinzu. Muss gar nicht so fancy wie oben sein.
 # t3_start
-
+barplot(Freq~Class+Survived, data = survival, 
+        legend = TRUE,
+        beside = TRUE,
+        main = "Weibliche Erwachsene auf der Titanic",
+        horiz = TRUE,
+        las = 1,
+        ylim = c(0, 15)
+)
 # t3_ende
 
 

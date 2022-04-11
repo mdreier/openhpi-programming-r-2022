@@ -5,7 +5,7 @@ codeoceanR::rt_plot1()
 # Lese die Schulnoten aus der Datei "R43d_Noten.txt" ein. 
 # Prop Tipp: Die passende read.*-Funktion braucht kein sep-Argument.
 # Setze das fileEncoding="UTF-8", damit Umlaute korrekt eingelesen werden.
-noten <- 0
+noten <- read.delim("R43d_Noten.txt", fileEncoding="UTF-8")
 
 
 # B2 ----
@@ -13,7 +13,7 @@ noten <- 0
 # mit Noten als Spalten und Geschlecht als Zeilen. (Siehe 2.4 Kategorien)
 # Ordne die Zeilen für das Geschlecht in der Reihenfolge weiblich/männlich/divers.
 # Tipp: Wähle die 'table()'-Zeilen in umgekehrter Reihenfolge aus.
-noten_tabelle <- 0
+noten_tabelle <- table(noten$geschlecht, noten$note)[3:1, ]
 
 
 # B3 ----
@@ -21,7 +21,11 @@ noten_tabelle <- 0
 farben <- c("lightcoral","lightblue3","navajowhite2")
 # 'Weiblich' ist die oberste Zeile und wird von barplot als erstes (unten) geplottet.
 # tb3_start
-
+barplot(
+    noten_tabelle,
+    legend = TRUE,
+    col = farben
+)
 # tb3_ende
 
 
@@ -29,7 +33,12 @@ farben <- c("lightcoral","lightblue3","navajowhite2")
 # Erstelle ein Säulendiagramm mit denselben Werten, 
 # aber mit nebeneinander stehenden, nicht gestapelten Balken.
 # tb4_start
-balken_mitten <- 0
+balken_mitten <- barplot(
+    noten_tabelle,
+    legend = TRUE,
+    col = farben,
+    beside = TRUE
+)
 # tb4_ende
 
 
