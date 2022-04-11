@@ -6,7 +6,7 @@ codeoceanR::rt_plot1()
 # Auf CodeOcean liegt nur ein Ausschnitt der Daten, damit das Scoring schnell geht.
 # größerer Datensatz lokal auf dem Rechner für glatte Grafiken:
 codeoceanR::rt_full_file("R45d_Zugspitze.txt") # gerne nach dem ersten Lauf auskommentieren
-wzug <- 0
+wzug <- read.table("R45d_Zugspitze.txt", header = TRUE)
 str(wzug)
 summary(wzug)
 
