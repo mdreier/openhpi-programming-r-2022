@@ -9,6 +9,19 @@ codeoceanR::rt_plot1()
 
 # t1_start
 
+plot(
+    airquality$Temp,
+    # x = as.Date(paste("1973", airquality$Month, airquality$Day, sep = "-"), format="%Y-%m-%d"),
+    # y = airquality$Temp,
+    type="l",
+    lwd=2,
+    lty = "dotted",
+    #lty = 3,
+    col = "chocolate",
+    yaxt = "n",
+    xlab = "Date",
+    ylab = "Temparature / °C"
+)
 
 # t1_ende
 
